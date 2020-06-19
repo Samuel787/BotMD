@@ -6,8 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+<!--    <FrameLayout-->
+<!--        android:id="@+id/fragmentContainer"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+
+<!--    </FrameLayout>-->
+
     <fragment android:name="com.example.botmdtest.TemperatureFragment"
-        android:id="@+id/headlines_fragment"
+        android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
