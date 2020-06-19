@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DBDBDB"
+    tools:context=".TemperatureFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#fff">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="User Details"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@android:color/holo_blue_dark"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="16dp">
+
+            </TextView>
+
+            <TextView
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:text="Enter the details you want to pre-fil within the temperature form. You can choose to leave any field empty. Bot MD does not store any of this information on our servers. "
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:textColor="#000">
+
+            </TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@mipmap/baseline_face_black_48">
+
+                </ImageView>
+
+                <EditText
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="24dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:hint="User ID"
+                    android:textSize="18sp">
+
+                </EditText>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@mipmap/baseline_face_black_48">
+
+                </ImageView>
+
+                <EditText
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="24dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:hint="Temperature (\u00B0C)"
+                    android:textSize="18sp">
+
+                </EditText>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@mipmap/baseline_face_black_48">
+
+                </ImageView>
+
+                <Button
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="24dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center_vertical"
+                    android:text="Location"
+                    android:textAllCaps="false"
+                    android:textSize="18sp">
+
+                </Button>
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="Submit"
+                android:textAllCaps="false"
+                android:layout_gravity="center"
+                android:textSize="18sp">
+
+            </Button>
+
+        </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#fff">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Schedule Reminders"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@android:color/holo_blue_dark"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp">
+
+        </TextView>
+
+        <TextView
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:text="Bot MD can also help schedule optional daily reminders to log your temperature"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:textColor="#000">
+
+        </TextView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp">
+
+            <Button
+                android:background="#fff"
+                android:layout_height="wrap_content"
+                android:layout_width="240dp"
+                android:text="Reminder"
+                android:layout_marginLeft="16dp"
+                android:textColor="#000"
+                android:textSize="18sp"
+                android:textAllCaps="false"
+                android:gravity="left|center_vertical"
+                android:layout_alignParentLeft="true">
+
+            </Button>
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="16dp"
+                android:layout_centerVertical="true">
+
+            </Switch>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</ScrollView>
