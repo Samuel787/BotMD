@@ -61,6 +61,7 @@
                 </ImageView>
 
                 <EditText
+                    android:id="@+id/userID_holder"
                     android:layout_marginTop="16dp"
                     android:layout_marginLeft="0dp"
                     android:layout_marginRight="24dp"
@@ -91,6 +92,7 @@
                 </ImageView>
 
                 <EditText
+                    android:id="@+id/temperature_holder"
                     android:layout_marginTop="16dp"
                     android:layout_marginLeft="0dp"
                     android:layout_marginRight="24dp"
@@ -187,18 +189,31 @@
             android:layout_marginBottom="16dp">
 
             <Button
+                android:id="@+id/reminderButton"
                 android:background="#fff"
                 android:layout_height="wrap_content"
-                android:layout_width="240dp"
+                android:layout_width="match_parent"
                 android:text="Reminder"
                 android:layout_marginLeft="16dp"
                 android:textColor="#000"
                 android:textSize="18sp"
                 android:textAllCaps="false"
                 android:gravity="left|center_vertical"
-                android:layout_alignParentLeft="true">
+                android:layout_alignParentLeft="true"
+                style="?android:attr/borderlessButtonStyle">
 
             </Button>
+
+            <TextView
+                android:id="@+id/reminderButton1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/reminderButton"
+                android:text="Daily notification at: 1200 hrs"
+                android:paddingLeft="16dp"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:textColor="#5A5A5A"/>
 
             <Switch
                 android:layout_width="wrap_content"

@@ -14,6 +14,11 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    //global data
+    String userID;
+    String temperature;
+    String location;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
