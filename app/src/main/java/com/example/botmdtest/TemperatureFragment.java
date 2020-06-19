@@ -2,8 +2,13 @@ package com.example.botmdtest;
 
 
 import android.app.Activity;
+import android.app.AlarmManager;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -18,7 +23,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -45,6 +52,8 @@ public class TemperatureFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_temperature, container, false);
         initializeTimeDialog(rootView);
         updateNotificationTiming(rootView);
+        createNotificationChannel();
+        initializeReminderSwitch(rootView);
         return rootView;
     }
 
@@ -73,6 +82,28 @@ public class TemperatureFragment extends Fragment {
         });
     }
 
+    private void initializeReminderSwitch(View rootView){
+        Switch mSwitch = rootView.findViewById(R.id.reminderSwitch);
+        mSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(b){
+                    updateNotificationTiming(getView());
+                    Toast.makeText(getContext(), "Reminder set!", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getContext(), ReminderBroadCast.class);
+                    PendingIntent pendingIntent = PendingIntent.getBroadcast(getContext(), 0, intent, 0);
+                    AlarmManager alarmManager = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
+                    long timeAtButtonClick = System.currentTimeMillis();
+                    long tenSecondsInMillis = 1000*5;
+                    alarmManager.set(AlarmManager.RTC_WAKEUP, timeAtButtonClick + tenSecondsInMillis, pendingIntent);
+                } else {
+                    //cancel notifications
+
+                }
+            }
+        });
+    }
+
     /**
      * Updates the daily notification timing
      */
@@ -86,6 +117,7 @@ public class TemperatureFragment extends Fragment {
            updateNotificationTiming(getView());
         }
     }
+
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -174,4 +206,21 @@ public class TemperatureFragment extends Fragment {
         this.notificationMinutes = Integer.parseInt(stringTiming.substring(2));
     }
 
+
+    /**
+     * Creating a notification channel
+     */
+    private void createNotificationChannel(){
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            CharSequence name = "mdBotReminderChannel";
+            String description = "Channel for MD Bot";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel("notifyTemperature", name, importance);
+            channel.setDescription(description);
+
+
+            NotificationManager notificationManager = getActivity().getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+    }
 }
