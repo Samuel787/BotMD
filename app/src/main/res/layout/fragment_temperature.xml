@@ -87,7 +87,7 @@
                     android:layout_marginBottom="16dp"
                     android:layout_width="36dp"
                     android:layout_height="36dp"
-                    android:src="@mipmap/baseline_face_black_48">
+                    android:src="@drawable/temperature">
 
                 </ImageView>
 
@@ -99,6 +99,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:singleLine="true"
+                    android:inputType="numberDecimal"
                     android:hint="Temperature (\u00B0C)"
                     android:textSize="18sp">
 
@@ -117,7 +118,7 @@
                     android:layout_marginBottom="16dp"
                     android:layout_width="36dp"
                     android:layout_height="36dp"
-                    android:src="@mipmap/baseline_face_black_48">
+                    android:src="@drawable/location">
 
                 </ImageView>
 
@@ -138,6 +139,7 @@
             </LinearLayout>
 
             <Button
+                android:id="@+id/dataSubmitButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"

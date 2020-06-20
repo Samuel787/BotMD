@@ -92,9 +92,11 @@ public class LocationAdapter extends ArrayAdapter<LocationItem> implements Filte
                 filteredList.addAll(locationsListFull);
             } else {
                 String filteredPattern = charSequence.toString().toLowerCase().trim();
+                Log.v("filtering", filteredPattern);
                 for(LocationItem item : locationsListFull){
-                    if(item.getLocationName().startsWith(filteredPattern)){
+                    if(item.getLocationName().toLowerCase().trim().startsWith(filteredPattern)){
                         filteredList.add(item);
+                        Log.v("filtering", "added item "+item.getLocationName());
                     }
                 }
             }
