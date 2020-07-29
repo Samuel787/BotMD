@@ -156,18 +156,6 @@ public class TemperatureFragment extends Fragment {
 
                     alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
 
-//                    Log.v("testing", "notification set");
-//                    Calendar calendar = Calendar.getInstance();
-//                    calendar.set(Calendar.HOUR_OF_DAY, notificationHour);
-//                    calendar.set(Calendar.MINUTE, notificationMinutes);
-//                    calendar.set(Calendar.SECOND, 0);
-//
-//                    Intent intent = new Intent(getContext(), Notification_receiver.class);
-//                    intent.setAction("MY_NOTIFICATION_MESSAGE");
-//                    PendingIntent pendingIntent = PendingIntent.getBroadcast(getContext(), 100, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-//                    AlarmManager alarmManager = (AlarmManager)getActivity().getSystemService(Context.ALARM_SERVICE);
-//                    //alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, /*calendar.getTimeInMillis()*/ System.currentTimeMillis() + 1000*5, AlarmManager.INTERVAL_DAY, pendingIntent);
-//                    alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + 5000, pendingIntent);
                     SharedPreferences sharedPreferences = getActivity().getSharedPreferences(PREFERENCE_FILE_KEY, Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putInt("notificationEnabled", 1);
